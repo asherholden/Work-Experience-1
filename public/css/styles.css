@@ -214,7 +214,7 @@ img {
 }
 
 .site-header--home .container {
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .site-header--home nav {
@@ -264,6 +264,7 @@ img {
 }
 
 .hero-text {
+  width: 50%;
   flex: 1;
 }
 
@@ -279,8 +280,8 @@ img {
 }
 
 .hero-media {
-  width: 600px;
-  flex-shrink: 0;
+  width: 50%;
+  flex-shrink: 1;
 }
 
 .hero-image {
@@ -427,7 +428,7 @@ img {
 
 .playbook-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 2fr);
   gap: 28px;
 }
 
@@ -767,6 +768,25 @@ img {
   padding-top: 24px;
 }
 
+@media (max-width: 868px) {
+  .playbook-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-inner {
+    flex-direction: column-reverse;
+  }
+
+  .hero-text {
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-media {
+    width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 40px;
@@ -798,9 +818,6 @@ img {
     display: none;
   }
 
-  .nav-links li:last-child {
-    display: block;
-  }
   .dropdown {
     display: block;
   }
@@ -859,20 +876,16 @@ img {
     padding: 20px;
   }
 
-  .hero-inner {
-    flex-direction: column-reverse;
-  }
-
-  .hero-text {
-    text-align: center;
-  }
-
   .hero-actions {
     justify-content: center;
   }
 
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .playbook-grid {
+    grid-template-columns: 1fr;
   }
 
   .contact-layout {
